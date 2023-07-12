@@ -24,10 +24,12 @@ body{
   font-size: 1.7rem;
   text-align: left;
   text-shadow: 3px 3px 3px #0b098e;
+  font-family: sans-serif;
+  transition: 500ms;
 }
 
 #header a:hover {
-  color: #eee;
+  color: #ddd;
   text-decoration: none;
   margin: 0;
   padding: 3px 5px;
@@ -35,8 +37,8 @@ body{
   margin-bottom: 10px;
   font-size: 1.7rem;
   text-align: left;
-  background-color: #0b098e;
-  text-shadow: 3px 3px 3px #12076e;
+  text-shadow: 5px 5px 3px #12076e;
+  font-family: sans-serif;
 }
 
 #main {
