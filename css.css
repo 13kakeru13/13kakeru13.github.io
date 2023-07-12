@@ -47,28 +47,12 @@ body{
 }
 
 #main * {
+  font-family: sans-serif;
 }
 
 #footer{
   width: 100%;
-  position: fixed;
   background-color: #1d0bad;
-  top: 95%;
-  transition: 500ms;
-  bottom: 0;
-  font-family: sans-serif;
-  padding-left: 50px;
-  padding-top: -2px;
-  padding-right: 50px;
-}
-
-#footer:hover{
-  width: 100%;
-  position: fixed;
-  background-color: #1d0bad;
-  top: 80%;
-  transition: 500ms;
-  bottom: 0;
   font-family: sans-serif;
   padding-left: 50px;
   padding-top: -2px;
