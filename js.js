@@ -1,4 +1,4 @@
-function addheader{
+function addheader(){
   var headerelement = document.getElementById("header");
   headerelement.outerHTML = '<div id="header"><a href="/"><b>うえーい</b></a><a href="/"><b>でゅえーい</b></a><a href="/"><b>ふえーい</b></a><a href="/"><b>ぬうぇーい</b></a></div>';
 }
