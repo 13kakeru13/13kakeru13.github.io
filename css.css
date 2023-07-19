@@ -130,6 +130,9 @@ body{
   margin-bottom: 0px;
 }
 
+.footer-list p .komoku {
+  font-weight: bold;
+}
 
 /*
 @media screen and (max-width: 559px) {
