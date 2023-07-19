@@ -4,5 +4,5 @@ function addheader(){
 }
 function addfooter(){
   var footerelement = document.getElementById("footer");
-  footerelement.outerHTML = '<div id="footer"><div class="footer-list"><ul><li><p>項目</p></li><li><a href="/" target="_parent"><p>あいうえお</p></a></li></ul><ul><li><p>項目</p></li><li><a href="/" target="_parent"><p>あいうえお</p></a></li></ul></div></div>';
+  footerelement.outerHTML = '<div id="footer"><div class="footer-list"><ul><li><b>項目</b></li><li><a href="/" target="_parent"><p>あいうえお</p></a></li></ul><ul><li><b>項目</b></li><li><a href="/" target="_parent"><p>あいうえお</p></a></li></ul></div></div>';
 }
