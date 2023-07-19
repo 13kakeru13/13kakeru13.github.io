@@ -47,6 +47,21 @@ body{
   min-height: 60rem; /*600pxとかでもおｋ*/
   background-color: #f4f4f4;
 }
+@media screen and (max-width: 559px) {
+  /*mobile*/
+  #main{
+    width: 103.1%;
+  }
+}
+@media screen and (min-width: 560px) and (max-width: 959px) {
+  /*tablet*/
+  #main{
+    width: 103.1%;
+  }
+}
+@media screen and (min-width: 960px) {
+  /*desktop*/
+}
 
 @media (prefers-color-scheme: dark) {
   #main {
