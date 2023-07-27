@@ -12,5 +12,5 @@ function otherLanguage(otherlang){
 
 function titlename(){
   var site = location.href.split('/');
-  document.title = site[5] + " - chimopedia";
+  document.title = decodeURI(site[5]) + " - chimopedia";
 }
