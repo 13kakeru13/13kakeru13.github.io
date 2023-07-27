@@ -9,3 +9,8 @@ function otherLanguage(otherlang){
    var sidebarelement = document.getElementById("sblangu");
   sidebarelement.outerHTML = otherlang
 }
+
+function titlename(){
+  var site = location.href.split('/');
+  document.title = site[5] + " - chimopedia";
+}
