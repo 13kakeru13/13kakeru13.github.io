@@ -13,4 +13,5 @@ function titlename(){
 function otherLanguage(otherlang){
    var sidebarelement = document.getElementById("sblanguages").innerHTML;
    sidebarelement=sidebarelement+"<a href='"+otherlang+".html'>"+otherlang+"</a><br>";
+  document.getElementById("sblanguages").innerHTML=sidebarelement;
 }
