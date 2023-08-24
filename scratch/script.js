@@ -8,5 +8,5 @@ var myname="SatimK_w2";
 document.getElementById("myaccount").outerHTML='<a id="myaccount" href="https://scratch.mit.edu/users/'+myname+'/">Scratch</a>';
 var mns=document.querySelectorAll(".usn");
 for(let i;i<mns.length;i++){
-    mns[i].innerHTML=myname;
+    mns[i].textContent=myname;
 }
