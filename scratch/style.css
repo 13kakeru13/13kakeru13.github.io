@@ -1,0 +1,115 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  overflow-x: hidden;
+  margin: 0;
+}
+
+p{
+  font-size: 1rem;
+}
+
+a{
+  text-decoration: none;
+  color: royalblue;
+  transition: 500ms;
+}
+
+.header{
+  height: 2rem;
+  width: 100%;
+  background-color: #66fffb;
+  padding: 1rem;
+}
+
+.header_file{
+  overflow: hidden;
+}
+
+.header_file *{
+  color: white;
+  display: inline;
+  padding: 0;
+}
+
+.header_file *:hover{
+  color: #4ab9b5;
+}
+
+#main{
+    margin: 15px 50px;
+    min-height: 500px;
+}
+
+@media (max-width: 400px) {
+   /* 横幅が400px以下の場合 */
+   #main{
+    height: 1200px;
+   }
+}
+
+#main :not(iframe,span,a,b,i,u,s,big,small,.nopadding){
+  padding: 1%;
+}
+
+#adspace{
+  height: auto;
+  width: 525px;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  color: #5d627b;
+  background: #fff;
+  border-top: solid 4px #5d627b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+}
+
+#iframefooter{
+  background-color: #4ab9b5;
+  padding: 0;
+  margin-bottom: -15px;
+  width: 100%;
+  height: 320px;
+}
+
+#footer {
+  background-color: #4ab9b5;
+  color: #fff;
+  width: 100%;
+  height: 300px;
+  padding: 0px;
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+#footer a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer-list {
+  float: left;
+  margin: 0px 10px;
+  padding: 0px;
+}
+
+.footer-list p{
+  margin-bottom: 0px;
+}
+
+.footer-list ul{
+  margin: 0px;
+  padding: 0px;
+}
+
+.footer-list li{
+  list-style: none;
+  margin: 0px 2px;
+  padding: 0px 7px;
+}
+
+.footer-list li p{
+  font-size: 0.9rem
+}
