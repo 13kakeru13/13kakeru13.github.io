@@ -18,7 +18,7 @@ function reloadad() {
         ["710055697/embed?fps=29","僕の(宣伝などをあまりしていない) 作品の中でいちばん評価されてます"],
         ["705386223/embed?fps=26","なぜか伸びないシリーズです"]
     ];
-    var randomnum = Math.floor(Math.random() * projectlist.length);
+    var randomnum = Math.floor(Math.random() * prdatalist.length);
     var showed_prCode =
     '<iframe src="https://turbowarp.org/'+prdatlist[randomnum][0]+'" width="499" height="416" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>';
     document.getElementById("advertisedproject").innerHTML=showed_prCode;
