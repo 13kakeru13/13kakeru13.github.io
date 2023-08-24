@@ -7,6 +7,6 @@ document.getElementById("header").innerHTML =
 var myname="SatimK_w2";
 document.getElementById("myaccount").outerHTML='<a id="myaccount" href="https://scratch.mit.edu/users/'+myname+'/">Scratch</a>';
 var mns=document.querySelectorAll(".usn");
-for(let i;i<mns.length;i++){
+for(let i=0;i<mns.length;i++){
     mns[i].textContent=myname;
 }
