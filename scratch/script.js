@@ -28,7 +28,7 @@ reloadad();
 
 function adhyoji(){
     if(document.getElementById("adsp").style.display=="none"){
-        document.getElementById("adsp").style.display="display";
+        document.getElementById("adsp").style.display="block";
     }else{
         document.getElementById("adsp").style.display="none";
     }
