@@ -25,10 +25,6 @@ a{
   padding: 1rem;
 }
 
-.header_file{
-  overflow: hidden;
-}
-
 #header *{
   color: white;
   display: inline;
@@ -64,14 +60,6 @@ a{
   background: #fff;
   border-top: solid 4px #5d627b;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
-}
-
-#iframefooter{
-  background-color: #4ab9b5;
-  padding: 0;
-  margin-bottom: -15px;
-  width: 100%;
-  height: 320px;
 }
 
 #footer {
