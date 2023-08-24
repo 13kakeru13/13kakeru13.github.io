@@ -14,26 +14,14 @@ for(let i=0;i<mns.length;i++){
 
 //広告のプログラム
 function reloadad() {
-  var projectlist = ["710055697/embed?fps=29", "705386223/embed?fps=26"];
-  var commentlist = [
-    "僕の(宣伝などをあまりしていない) 作品の中でいちばん評価されてます",
-    "なぜか伸びないシリーズです",
-  ];
-  // まず宣伝したいもののリストとコメントのリストを作る
-  var randomnum = Math.floor(Math.random() * projectlist.length);
-  // ランダムな数字を決める
-  var prInfo = projectlist[randomnum];
-  // 宣伝したいプロジェクトの一部を取得
-  var showed_prCode =
-    ' <iframe src="https://turbowarp.org/' +
-    prInfo +
-    '" width="499" height="416" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen> </iframe>';
-  // 表示させる内容を決める
-  document.getElementById("advertisedproject").innerHTML = showed_prCode;
-  // 作品を表示
-
-  document.getElementById("withcomment").innerHTML =
-    " <p style='font-size:0.6em;'> " + commentlist[randomnum] + " </p>";
-  //コメントを表示
+    var prdatalist=[
+        ["710055697/embed?fps=29","僕の(宣伝などをあまりしていない) 作品の中でいちばん評価されてます"],
+        ["705386223/embed?fps=26","なぜか伸びないシリーズです"]
+    ];
+    var randomnum = Math.floor(Math.random() * projectlist.length);
+    var showed_prCode =
+    '<iframe src="https://turbowarp.org/'+prdatlist[randomnum][0]+'" width="499" height="416" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>';
+    document.getElementById("advertisedproject").innerHTML=showed_prCode;
+    document.getElementById("withcomment").innerHTML="<p style='font-size:0.6em;'>"+prdatalist[randomnum][1]+"</p>";
 }
 reloadad();
