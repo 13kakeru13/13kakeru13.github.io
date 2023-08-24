@@ -18,7 +18,7 @@ a{
   transition: 500ms;
 }
 
-.header{
+#header{
   height: 2rem;
   width: 100%;
   background-color: #66fffb;
@@ -29,13 +29,13 @@ a{
   overflow: hidden;
 }
 
-.header_file *{
+#header *{
   color: white;
   display: inline;
   padding: 0;
 }
 
-.header_file *:hover{
+#header *:hover{
   color: #4ab9b5;
 }
 
