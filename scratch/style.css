@@ -30,6 +30,7 @@ a{
   color: white;
   display: inline;
   padding: 0;
+  margin-right:3px;
 }
 
 #header *:hover{
