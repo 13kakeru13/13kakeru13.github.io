@@ -25,3 +25,11 @@ function reloadad() {
     document.getElementById("withcomment").innerHTML="<p style='font-size:0.6em;'>"+prdatalist[randomnum][1]+"</p>";
 }
 reloadad();
+
+function adhyoji(){
+    if(document.getElementById("adsp").style.display=="none"){
+        document.getElementById("adsp").style.display="display";
+    }else{
+        document.getElementById("adsp").style.display="none";
+    }
+}
