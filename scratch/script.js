@@ -6,3 +6,7 @@ document.getElementById("header").innerHTML =
 //ユザネが入るところを自分のユザネに置き換える
 var myname="SatimK_w2";
 document.getElementById("myaccount").outerHTML='<a id="myaccount" href="https://scratch.mit.edu/users/'+myname+'/">Scratch</a>';
+var mns=document.querySelectorAll(".usn");
+for(let i;i<mns.length;i++){
+    mns[i].innerHTML=myname;
+}
