@@ -20,7 +20,7 @@ function reloadad() {
     ];
     var randomnum = Math.floor(Math.random() * prdatalist.length);
     var showed_prCode =
-    '<iframe src="https://turbowarp.org/'+prdatlist[randomnum][0]+'" width="499" height="416" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>';
+    '<iframe src="https://turbowarp.org/'+prdatalist[randomnum][0]+'" width="499" height="416" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>';
     document.getElementById("advertisedproject").innerHTML=showed_prCode;
     document.getElementById("withcomment").innerHTML="<p style='font-size:0.6em;'>"+prdatalist[randomnum][1]+"</p>";
 }
