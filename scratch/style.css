@@ -39,7 +39,7 @@ a{
 
 #main{
     margin: 15px 50px;
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 #main :not(iframe,span,a,b,i,u,s,big,small,.nopadding){
