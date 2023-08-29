@@ -39,7 +39,7 @@ a{
 
 #main{
     margin: 15px 50px;
-    min-height: 500px;
+    min-height: 100%;
 }
 
 @media (max-width: 400px) {
