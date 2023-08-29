@@ -39,14 +39,7 @@ a{
 
 #main{
     margin: 15px 50px;
-    max-height: 100%;
-}
-
-@media (max-width: 400px) {
-   /* 横幅が400px以下の場合 */
-   #main{
     min-height: 100%;
-   }
 }
 
 #main :not(iframe,span,a,b,i,u,s,big,small,.nopadding){
