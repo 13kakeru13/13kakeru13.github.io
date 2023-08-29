@@ -57,7 +57,7 @@ a{
 }
 
 @media (prefers-color-scheme: dark) {
-  #main *{
+  #main{
     color:#fff;
   }
 }
