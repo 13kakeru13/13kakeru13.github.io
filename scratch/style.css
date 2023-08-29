@@ -40,11 +40,27 @@ a{
 #main{
     margin: 15px 50px;
     min-height: 100vh;
+    background-color: #fff;
+}
+
+#main p{
+    color:#000;
+}
+
+@media (prefers-color-scheme: dark) {
+  #main {
+    background-color: #333;
+  }
+  #main p{
+    color:#dfdfdf;
+  }
 }
 
 #main :not(iframe,span,a,b,i,u,s,big,small,.nopadding){
   padding: 1%;
 }
+
+
 
 #adspace{
   height: auto;
