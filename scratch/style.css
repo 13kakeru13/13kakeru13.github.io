@@ -52,10 +52,6 @@ a{
     min-height: 100vh;
 }
 
-#main p{
-    color:#000;
-}
-
 @media (prefers-color-scheme: dark) {
   #main,#main *{
     color:#fff;
