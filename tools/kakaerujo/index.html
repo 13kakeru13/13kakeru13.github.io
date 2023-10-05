@@ -2,11 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <script>
-      var froe=function(){
-        document.getElementById('username').textContent=sc.jsondata.user.username;
-      };
-    </script>
     <style>
       body{
         margin:0;
@@ -17,7 +12,7 @@
       }
     </style>
   </head>
-  <body onload="froe();">
+  <body>
     <div id="pagewrapper">
       <div id="topnavi">
         <p>作る、見る、？？、Scratchについて</p>
@@ -49,12 +44,12 @@
         if(sc.jsondata=="*error"){break;}
         sc.jsondata.user=await(await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username)).json();
       }
-      r();
+      await r();
 
-      /*読み込み後にするやつ
-      var froe=function(){
-        document.getElementById('username').textContent=sc.jsondata.user.username;
-      };
+      /*読み込み後にするやつ*/
+      
+      document.getElementById('username').textContent=sc.jsondata.user.username;
+      
       /**/
     </script>
   </body>
