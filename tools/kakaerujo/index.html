@@ -8,6 +8,7 @@
         let params = url.searchParams;
         sc.username=params.get("user");
         sc.jsondata=await(await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username)).json();
+        sc.r=1;
       }
       r();
     </script>
