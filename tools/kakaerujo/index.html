@@ -12,7 +12,7 @@
       }
     </style>
   </head>
-  <body onload="iijduhfn();">
+  <body>
     <div id="pagewrapper">
       <div id="topnavi">
         <p>作る、見る、？？、Scratchについて</p>
@@ -47,9 +47,7 @@
       r();
 
       /*読み込み後にするやつ*/
-      var iijduhfn=function(){
-        document.getElementById('username').textContent=sc.jsondata.user.username;
-      }
+      document.getElementById('username').textContent=sc.jsondata.user.username;
     </script>
   </body>
 </html>
