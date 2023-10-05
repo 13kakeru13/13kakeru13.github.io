@@ -1,8 +1,6 @@
 <!DOTYPE html>
 <html>
-  <body>
-    <div id="pagewrapper"></div>
-    <div id="footer"></div>
+  <head>
     <script>
       var sc={username:"",jsondata:""};
       async function r(){
@@ -14,7 +12,14 @@
         }
       }
       r();
+    </script>
+  </head>
+  <body>
+    <div id="pagewrapper"></div>
+    <div id="footer"></div>
+    <script>
       console.log(sc.jsondata);
+      alert(sc.username);
     </script>
   </body>
 </html>
