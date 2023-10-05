@@ -14,12 +14,14 @@
       r();
     </script>
   </head>
-  <body>
+  <body onload="hr();">
     <div id="pagewrapper"></div>
     <div id="footer"></div>
     <script>
-      console.log(sc.jsondata);
-      alert(sc.username);
+      var hr=function(){
+        console.log(sc.jsondata);
+        alert(sc.username);
+      }
     </script>
   </body>
 </html>
