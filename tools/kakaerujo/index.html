@@ -12,7 +12,7 @@
       }
     </style>
   </head>
-  <body>
+  <body onload="froe();">
     <div id="pagewrapper">
       <div id="topnavi">
         <p>作る、見る、？？、Scratchについて</p>
@@ -31,28 +31,25 @@
       
     </div>
     <script>
-      var sc={username:"",jsondata:""};
-      sc.jsondata={user:""};
+      var sc={username:"",jsondata:{user:""}};
       let url = new URL(window.location.href);
       let params = url.searchParams;
       sc.username=params.get("user");
       async function r(){
-        var ek;
         try{
-          ek=await(await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username)).json();
+          await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username);
         }catch(e){
           sc.jsondata="*error"
         }
-        if(sc.jsondata!="*error"){
-          sc.jsondata.user=await(await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username)).json();
-        }
-
+        if(sc.jsondata=="*error"){break;}
+        sc.jsondata.user=await(await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username)).json();
       }
       r();
 
-      console.log(sc);
       /*読み込み後にするやつ*/
-      document.getElementById('username').textContent=sc.jsondata.user.username;
+      var froe=function(){
+        document.getElementById('username').textContent=sc.jsondata.user.username;
+      };
     </script>
   </body>
 </html>
