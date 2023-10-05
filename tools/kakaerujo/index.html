@@ -1,0 +1,16 @@
+<!DOTYPE html>
+<html>
+  <body>
+    <script>
+      var sc={username:"",jsondata:""};
+      async function r(){
+        if(window.location.indexOf("?")!=-1){
+          sc.username=params.get("users");
+        }
+        sc.jsondata=await(await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username)).json();
+      }
+      r();
+      console.log(sc.jsondata);
+    </script>
+  </body>
+</html>
