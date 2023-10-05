@@ -32,10 +32,10 @@
     </div>
     <script>
       var sc={username:"",jsondata:{user:""}};
+      let url = new URL(window.location.href);
+      let params = url.searchParams;
+      sc.username=params.get("user");
       async function r(){
-        let url = new URL(window.location.href);
-        let params = url.searchParams;
-        sc.username=params.get("user");
         try{
           await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username);
         }catch(e){
@@ -46,6 +46,7 @@
       }
       r();
 
+      console.log(sc);
       /*読み込み後にするやつ*/
       document.getElementById('username').textContent=sc.jsondata.user.username;
     </script>
