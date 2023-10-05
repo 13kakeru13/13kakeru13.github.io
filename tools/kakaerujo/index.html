@@ -4,12 +4,10 @@
     <script>
       var sc={username:"",jsondata:""};
       async function r(){
-        const qw=location.href;
-        if(qw.indexOf("?")!=-1){
-          const params=new URLSearchParams(location.href.search);
-          sc.username=params.get("users");
-          sc.jsondata=await(await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username)).json();
-        }
+        const params=new URLSearchParams(location.href.search);
+        sc.username=params.get("users");
+        sc.jsondata=await(await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username)).json();
+        alert(sc);
       }
       r();
     </script>
