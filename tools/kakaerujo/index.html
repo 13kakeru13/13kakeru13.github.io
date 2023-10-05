@@ -2,13 +2,12 @@
 <html>
   <head>
     <script>
-      var sc={r:"0",username:"",jsondata:""};
+      var sc={username:"",jsondata:""};
       async function r(){
         let url = new URL(window.location.href);
         let params = url.searchParams;
         sc.username=params.get("user");
         sc.jsondata=await(await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username)).json();
-        sc.r=1;
       }
       r();
     </script>
@@ -18,7 +17,6 @@
     <div id="footer"></div>
     <script>
       var hr=function(){
-        while(sc.r==0){}
         console.log(sc.jsondata);
         alert(sc.username);
       }
