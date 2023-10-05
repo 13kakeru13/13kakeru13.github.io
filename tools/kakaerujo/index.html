@@ -4,9 +4,9 @@
     <script>
       var sc={username:"",jsondata:""};
       async function r(){
-        var qw=location.href;
+        const qw=location.href;
         if(qw.indexOf("?")!=-1){
-          const params=new URLSearchParams(qw.search);
+          const params=new URLSearchParams(location.href.search);
           sc.username=params.get("users");
           sc.jsondata=await(await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username)).json();
         }
