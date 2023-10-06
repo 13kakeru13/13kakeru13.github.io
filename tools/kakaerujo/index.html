@@ -41,8 +41,9 @@
         }catch(e){
           sc.jsondata="*error"
         }
-        if(sc.jsondata=="*error"){break;}
-        sc.jsondata.user=await(await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username)).json();
+        if(sc.jsondata!="*error"){
+          sc.jsondata.user=await(await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username)).json();
+        }
       }
       await r();
 
