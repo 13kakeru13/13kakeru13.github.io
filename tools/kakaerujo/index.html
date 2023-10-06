@@ -12,7 +12,7 @@
       }
     </style>
   </head>
-  <body>
+  <body onload="ve()">
     <div id="pagewrapper">
       <div id="topnavi">
         <p>作る、見る、？？、Scratchについて</p>
@@ -45,12 +45,13 @@
           sc.jsondata.user=await(await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username)).json();
         }
       }
-      r();
+      
 
       /*読み込み後にするやつ*/
-      
-      document.getElementById('username').textContent=sc.jsondata.user.username;
-      
+      async function ve(){
+        await r();
+        document.getElementById('username').textContent=sc.jsondata.user.username;
+      }
       /**/
     </script>
   </body>
