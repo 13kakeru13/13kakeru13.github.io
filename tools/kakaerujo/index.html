@@ -252,7 +252,7 @@
         }
         if (sc.jsondata != "*error") {
           sc.jsondata.user=await(await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username)).json();
-          sc.jsondata.project=await(await fetch("https://scratchapi2.glitch.me/https://scratch.mit.edu/site-api/users/all/"+sc.username)).json();
+          sc.jsondata.ftproject=await(await fetch("https://scratchapi2.glitch.me/https://scratch.mit.edu/site-api/users/all/"+sc.username)).json();
         }
       }
 
