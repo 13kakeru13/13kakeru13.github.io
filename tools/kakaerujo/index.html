@@ -113,8 +113,7 @@
         padding-bottom: 10px;
         position: relative;
       }
-      #bio-readonly,
-      #status-readonly {
+      #bio-readonly,#status-readonly {
         height: 108px;
         margin: 0;
         overflow: hidden;
@@ -202,31 +201,23 @@
               <div class="usercontent">
                 <div id="userdetails" class="about">
                   <h3 id="kjt-bio">h</h3>
-                  <div
-                    id="bio-readonly"
-                    class="readonly"
-                    style="overflow: auto"
-                  >
+                  <div id="bio-readonly" class="readonly" style="overflow:auto">
                     <div class="viewport">
                       <p class="overview" id="kjd-userbio"></p>
                     </div>
                   </div>
                   <h3 id="kjt-status">t</h3>
-                  <div
-                    id="status-readonly"
-                    class="readonly"
-                    style="overflow: auto"
-                  >
+                  <div id="status-readonly" class="readonly" style="overflow: auto">
                     <div class="viewport">
                       <p class="overview" id="kjd-userstatus"></p>
                     </div>
                   </div>
                 </div>
                 <div class="player" style="top:20px;left:340px;">
-                  <h3 class="featured-project-heading">project</h3>
+                  <h3 class="ftproject-heading">project</h3>
                   <div class="stage" style="width: 282px">
-                    <a id="featured-project">
-                      <img width="282" height="210" alt="Featured project" id="usersproject">
+                    <a id="ftproject">
+                      <img width="282" height="210" alt="Featured project" id="ftproject-image">
                     </a>
                   </div>
                   <span class="title">
@@ -243,7 +234,7 @@
     </div>
     <div id="footer"></div>
     <script>
-      var sc = { username: "", jsondata: { user: "",project:""} };
+      var sc = { username: "", jsondata: { user: "",ftproject:""} };
       let url = new URL(window.location.href);
       let params = url.searchParams;
       sc.username = params.get("user");
@@ -251,7 +242,7 @@
         ja: {
           userbio: "私について",
           userstatus: "私が取り組んでいること",
-        },
+        }
       };
       async function r() {
         try {
@@ -268,16 +259,12 @@
       /*読み込み後にするやつ*/
       async function ve() {
         await r();
-        document.getElementById("username").textContent =
-          sc.jsondata.user.username;
-        document.getElementById("kjt-bio").textContent = tslr.ja.userbio;
-        document.getElementById("kjd-userbio").innerHTML =
-          sc.jsondata.user.profile.bio.replace(/(\r\n|\r|\n)/g, "<br>");
-        document.getElementById("kjt-status").textContent = tslr.ja.userstatus;
-        document.getElementById("kjd-userstatus").innerHTML =
-          sc.jsondata.user.profile.status.replace(/(\r\n|\r|\n)/g, "<br>");
-        document.getElementById("kjd-userstatus").innerHTML =
-          sc.jsondata.user.profile.status.replace(/(\r\n|\r|\n)/g, "<br>");
+        document.getElementById("username").textContent=sc.jsondata.user.username;
+        document.getElementById("kjt-bio").textContent=tslr.ja.userbio;
+        document.getElementById("kjd-userbio").innerHTML=sc.jsondata.user.profile.bio.replace(/(\r\n|\r|\n)/g, "<br>");
+        document.getElementById("kjt-status").textContent=tslr.ja.userstatus;
+        document.getElementById("kjd-userstatus").innerHTML=sc.jsondata.user.profile.status.replace(/(\r\n|\r|\n)/g, "<br>");
+        document.getElementById("kjd-userstatus").innerHTML=sc.jsondata.user.profile.status.replace(/(\r\n|\r|\n)/g, "<br>");
       }
       /**/
     </script>
