@@ -214,7 +214,7 @@
                   </div>
                 </div>
                 <div class="player" style="top:20px;left:340px;">
-                  <h3 class="ftproject-heading">project</h3>
+                  <h3 id="ftproject-heading">project</h3>
                   <div class="stage" style="width: 282px">
                     <a id="ftproject">
                       <img width="282" height="210" alt="Featured project" id="ftproject-image">
@@ -264,7 +264,7 @@
         document.getElementById("kjd-userbio").innerHTML=sc.jsondata.user.profile.bio.replace(/(\r\n|\r|\n)/g, "<br>");
         document.getElementById("kjt-status").textContent=tslr.ja.userstatus;
         document.getElementById("kjd-userstatus").innerHTML=sc.jsondata.user.profile.status.replace(/(\r\n|\r|\n)/g, "<br>");
-        document.getElementById("kjd-userstatus").innerHTML=sc.jsondata.user.profile.status.replace(/(\r\n|\r|\n)/g, "<br>");
+        document.getElementById("ftproject-heading").textContent=sc.jsondata.ftproject.u;
       }
       /**/
     </script>
