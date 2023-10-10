@@ -3,6 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <style>
+      html {
+        color: #211922;
+        font-family: "helvetica neue",arial,sans-serif;
+         font-size: 13px;
+      }
+      html {
+        background: #fff;
+        color: #000;
+        direction: ltr;
+        font: 81.25% 'Lucida Grande',arial,sans-serif;
+      }
       div {
         display: block;
       }
@@ -93,9 +104,21 @@
         margin-bottom: 0;
         margin-right: 10px;
       }
-      
+      .header-text .profile-details {
+        color: #999;
+        margin-bottom: 0px;
+        line-height: 16px;
+      }
       .box .box-head .header-text {
         margin-left: 65px;
+      }
+      .header-text .profile-details .group {
+        border-right: 1px solid #ccc;
+        margin-right: 5px;
+        padding-right: 5px;
+      }
+      .header-text .profile-details .location {
+        display: block;
       }
       #profile-box {
         position: relative;
@@ -217,10 +240,15 @@
               </div>
             </form>
             <div class="header-text">
-              
+              <h2 id="username">*</h2>
+              <p class="profile-details">
+                <span class="group" id="kjd-scratcher"></span>
+                <span id="kjt-joinA"></span>
+                <span id="kjd-join"></span>
+                <span id="kjt-joinB"></span>
+                <span class="location" id="kjd-location">location</span>
+              </p>
             </div>
-            <h3 id="username">*</h3>
-            <p>text</p>
           </div>
           <div class="box-content" id="profile-box" style="height: fit-content">
             <div class="inner clearfix">
@@ -265,15 +293,31 @@
       let url=new URL(window.location.href);
       let params=url.searchParams;
       sc.username=params.get("user");
-      /*翻訳やらタイムゾーンやら*/
+      /*タイムゾーンやら*/
       var timezone=new Date();timezone=(timezone.getTimezoneOffset())/-60;
+      /*言語*/
       var tslr = {
         ja:{
           userbio: "私について",
           userstatus: "私が取り組んでいること",
+          scratchteam: "Scratchチーム",
+          joinA:"",
+          joinB:"前に参加",
+          yearsA:"",
+          yearsB:"年 ",
+          daysA:"",
+          daysB:"日 ",
+          hoursA:"",
+          hoursB:"時間 ",
+          minutesA:"",
+          minutesB:"分 ",
+          secondsA:"",
+          secondsB:"秒",
+          
         }
       };
-      
+      const lan="ja";
+      /*その他もろもろ*/
       async function r() {
         try {
           await fetch("https://scratchapi2.glitch.me/https://api.scratch.mit.edu/users/"+sc.username);
@@ -286,17 +330,54 @@
         }
       }
       
-      function getTimeByISIO(sg,tz){
-        return (Number(Date.parse(sg))+3600000*tz);
+      function jin(){
+        var dateparsed=getTimeByISIO(sc.jsondata.user.history.joined,0);
+        var nowparsed=getTimeByISIO(new Date,timezone);
+        var dif=(nowparsed-dateparsed)/1000;
+        var u,y,d,h,n,s;
+        u=dif;
+        y=Math.floor(u/(60*60*24*365));
+        u=u%(60*60*24*365);
+        d=Math.floor(u/(60*60*24));
+        u=u%(60*60*24);
+        h=Math.floor(u/(60*60));
+        u=u%(60*60);
+        n=Math.floor(u/60);
+        u=u%60;
+        s=Math.floor(u);
+        var p;
+        p=tslr[lan].secondsA+s+tslr[lan].secondsB;
+        if(n>0){p=tslr[lan].minutesA+n+tslr[lan].minutesB+p;}
+        if(h>0){p=tslr[lan].hoursA+h+tslr[lan].hoursB+p;}
+        if(d>0){p=tslr[lan].daysA+d+tslr[lan].daysB+p;}
+        if(y>0){p=tslr[lan].yearsA+y+tslr[lan].yearsB+p;}
+        document.getElementById("kjd-join").textContent=p;
       }
+      
+      function getTimeByISIO(sg,tz){return (Number(Date.parse(sg))+3600000*tz);}
       
       /*読み込み後にするやつ*/
       async function ve() {
         await r();
-        document.getElementById("username").textContent=sc.jsondata.user.username;
-        document.getElementById("kjt-bio").textContent=tslr.ja.userbio;
+        if(sc.jsondata.user.scratchteam==false){
+          document.getElementById("username").textContent=sc.jsondata.user.username;
+        }else{
+          document.getElementById("username").textContent=sc.jsondata.user.username+"*";
+        }
+        if(sc.jsondata.user.scratchteam==true){
+          document.getElementById("kjd-scratcher").textContent=tslr[lan].scratchteam;
+        }else{
+          
+        }
+        jin();
+        console.log("↓実行してみてね")
+        console.log("setInterval(jin,900);");
+        document.getElementById("kjt-joinA").textContent=tslr[lan].joinA;
+        document.getElementById("kjt-joinB").textContent=tslr[lan].joinB;
+        document.getElementById("kjd-location").textContent=sc.jsondata.user.profile.country;
+        document.getElementById("kjt-bio").textContent=tslr[lan].userbio;
         document.getElementById("kjd-userbio").innerHTML=sc.jsondata.user.profile.bio.replace(/(\r\n|\r|\n)/g, "<br>");
-        document.getElementById("kjt-status").textContent=tslr.ja.userstatus;
+        document.getElementById("kjt-status").textContent=tslr[lan].userstatus;
         document.getElementById("kjd-userstatus").innerHTML=sc.jsondata.user.profile.status.replace(/(\r\n|\r|\n)/g, "<br>");
         if(sc.jsondata.ftproject.featured_project!=null){
           document.getElementById("ftproject-heading").textContent=sc.jsondata.ftproject.featured_project_label_name;
