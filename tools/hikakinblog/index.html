@@ -31,10 +31,13 @@
             <img width="176" height="176" style="position:absolute;top:178px;left:268px;" src="/tools/hikakinblog/hikakin1.jpg" id="himg1">
             <img width="216" height="216" style="position:absolute;top:164px;left:514px;" src="/tools/hikakinblog/hikakin2.jpg" id="himg2">
         </div>
-        <div style="padding:100px;">
-            <input type="text" id="customtextblog">
+        <div style="padding:100px 45px;">
+            みんな僕<input type="text" id="customtextblog">ですよ
+	    <br>
             <input type="file" id="customimgblog1">
 	    <input type="file" id="customimgblog2">
+	    <br>
+	    <button onclick="loadblog">HikainBlog</button>
         </div>
         <script>
             function hikakinblog(boku,hikakinimg1,hikakinimg2){
@@ -53,11 +56,20 @@
 	        var fileReader1=new FileReader();
                 fileReader1.onload=function(){
 	            dataUri1=this.result;
-		    hikakinblog("b",dataUri1,dataUri1);
 	        }
 	        fileReader1.readAsDataURL(fileList1[0]);
             });
-
+	    document.getElementById("customimgblog2").addEventListener("change",function(){
+	        var fileList2=this.files;
+	        var fileReader2=new FileReader();
+                fileReader2.onload=function(){
+	            dataUri2=this.result;
+	        }
+	        fileReader2.readAsDataURL(fileList2[0]);
+            });
+		function loadblog(){
+		    hikakinblog(document.getElementById("customtextblog").value,dataUri1,dataUri2);
+		}
         </script>
     </body>
 </html>
