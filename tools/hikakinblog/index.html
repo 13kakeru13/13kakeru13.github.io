@@ -48,9 +48,7 @@
             console.log("みんな僕ヒカキンですよ");
             console.log("みんな僕以下使用法ですよ");
             console.log('「hikakinblog("人物名","画像リンク1","画像リンク2")」とコンソール(下の入力欄)に打つとHikakinBlogが簡単に作れますよ');
-
             var dataUri1,dataUri2;
-	    
             document.getElementById("customimgblog1").addEventListener("change",function(){
 	        var fileList1=this.files;
 	        var fileReader1=new FileReader();
@@ -67,9 +65,9 @@
 	        }
 	        fileReader2.readAsDataURL(fileList2[0]);
             });
-		function loadblog(){
-		    hikakinblog(document.getElementById("customtextblog").value,dataUri1,dataUri2);
-		}
+	    function loadblog(){
+	        hikakinblog(document.getElementById("customtextblog").value,dataUri1,dataUri2);
+	    }
         </script>
     </body>
 </html>
