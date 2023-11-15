@@ -33,7 +33,7 @@
         </div>
         <div>
             <input type="text" id="customtextblog">
-            
+            <input type="image" id="customimgblog1">
         </div>
         <script>
             function hikakinblog(boku,hikakinimg1,hikakinimg2){
@@ -44,6 +44,18 @@
             console.log("みんな僕ヒカキンですよ");
             console.log("みんな僕以下使用法ですよ");
             console.log('「hikakinblog("人物名","画像リンク1","画像リンク2")」とコンソール(下の入力欄)に打つとHikakinBlogが簡単に作れますよ');
+
+            var dataUri1,dataUri2;
+            
+document.getElementById("customimgblog1").addEventListener( "change", function() {
+	var fileList1 = this.files ;
+	var fileReader1 = new FileReader() ;
+	fileReader1.onload = function() {
+		dataUri1 = this.result;
+	}
+	fileReader1.readAsDataURL(fileList1) ;
+} ) ;
+
         </script>
     </body>
 </html>
