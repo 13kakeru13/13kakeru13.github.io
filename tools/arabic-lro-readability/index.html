@@ -49,14 +49,17 @@
     <script>
         var lroswitch=0;
         function lroswitcher(){
-            switch(document.getElementById("addlro").textContent){
-                case "LRO自動追加OFF":document.getElementById("addlro").textContent="LRO自動追加ON";lroswitch=1;break;
-                case "LRO自動追加ON":document.getElementById("addlro").textContent="LRO自動追加OFF";lroswitch=0;break;
-            }
+          switch(document.getElementById("addlro").textContent){
+            case "LRO自動追加OFF":document.getElementById("addlro").textContent="LRO自動追加ON";lroswitch=1;break;
+            case "LRO自動追加ON":document.getElementById("addlro").textContent="LRO自動追加OFF";lroswitch=0;break;
+          }
         }
         function gen(){
-            var arabictext=document.getElementById("arabic-form").value;
-            
+          var arabictext=document.getElementById("arabic-form").value;
+          var results="";
+          if(lroswitch==1){results="\u202d"}
+          results+=arabyah(arabictext);
+          document.getElementById("result").value=results;
         }
     </script>
   </body>
