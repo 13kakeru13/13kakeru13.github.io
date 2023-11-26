@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+        body{
+          margin:0;
+          padding:0;
+        }
+        h1{
+          font-size:3rem;
+        }
+        p{
+          font-size:1.2rem;  
+        }
+        .block{
+          text-align:center;
+          margin:60px 30px;
+        }
+        .form{
+          width: 550px;
+          height: 80px;
+        }
+        .button{
+            width: 100px;
+            height: 80px;
+        }
+    </style>
+    <script src="/tools/arabic-lro-readability/readability.js"></script>
+  </head>
+  <body>
+    <div class="block">
+      <h1>アラビア文字可読化ジェネレータ</h1>
+      <p>
+        自動で左から書いても崩れないアラビア文字を生成できるようにしました！<br>
+        左からしかアラビア文字を書けないところなどで使ってみてください。
+      </p>
+    </div>
+    <div class="block">
+      <div>
+        <input type="text" id="arabic-form" placeholder="アラビア文字を入力してください。" class="form">
+        <button onclick="gen()" class="button">Generate</button>
+      </div>
+      <div style="margin-top:10px;">
+        <input type="text" id="result" placeholder="ここに結果が出力されます。" class="form">
+        <button onclick="lroswitcher()" id="addlro">LRO自動追加OFF</button>
+      </div>
+    </div>
+    <script>
+        var lroswitch=0;
+        function lroswitcher(){
+            switch(document.getElementById("addlro").textContent){
+                case "LRO自動追加OFF":document.getElementById("addlro").textContent="LRO自動追加ON";lroswitch=1;break;
+                case "LRO自動追加ON":document.getElementById("addlro").textContent="LRO自動追加OFF";lroswitch=0;break;
+            }
+        }
+        function gen(){
+            var arabictext=document.getElementById("arabic-form").value;
+            
+        }
+    </script>
+  </body>
+</html>
