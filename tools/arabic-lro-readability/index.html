@@ -54,6 +54,7 @@
             case "LRO自動追加OFF":document.getElementById("addlro").textContent="LRO自動追加ON";lroswitch=1;break;
             case "LRO自動追加ON":document.getElementById("addlro").textContent="LRO自動追加OFF";lroswitch=0;break;
           }
+          gen();
         }
         function gen(){
           var arabictext=document.getElementById("arabic-form").value;
