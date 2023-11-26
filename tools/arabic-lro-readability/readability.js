@@ -53,7 +53,10 @@ function arabyah(arby){
             y=2;/*前後がアラビア文字の場合*/
         }
         if(scripts.includes(text.charAt(i+1))&&shuten.includes(text.charAt(i-1))){
-            y=3;/*前が終点文字の場合*/
+            y=3;/*前後がアラビア文字で前が終点文字の場合*/
+        }
+        if(!scripts.includes(text.charAt(i+1))&&shuten.includes(text.charAt(i-1))){
+            y=0;/*前が終点文字で後ろがない場合*/
         }
         if(shuten.includes(text.charAt(i+1))&&shuten.includes(text.charAt(i-1))&&shuten.includes(text.charAt(i))){
             y=0;/*前後と自分自身が終点文字の場合*/
