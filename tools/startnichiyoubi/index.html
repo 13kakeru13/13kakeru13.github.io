@@ -18,8 +18,8 @@
       
     </div>
     <script>
-      function start(boku,img1,img2){
-        document.getElementById("sunday").textContent=boku;
+      function start(sun,img1,img2){
+        document.getElementById("sunday").textContent=sun;
         document.getElementById("start").src=img1;
         document.getElementById("end").src=img2;
       }
@@ -40,9 +40,6 @@
 	}
 	fileReader2.readAsDataURL(fileList2[0]);
       });
-      function loadblog(){
-	start(document.getElementById("customtextblog").value,dataUri1,dataUri2);
-      }
     </script>
   </body>
 </html>
