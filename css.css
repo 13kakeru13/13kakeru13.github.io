@@ -60,11 +60,11 @@ body{
 }
 
 #main a{
-  color:#1fffad;
+  color:#76ab97
 }
 
 #main a:visited{
-  color:#76ab97
+  color:#1fffad;
 }
 
 #main * {
