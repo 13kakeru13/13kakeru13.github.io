@@ -11,37 +11,36 @@
         padding:0;
         margin:0;
       }
+			#canvas{
+				color:red;
+			}
+			#settings{
+				margin:2rem 20px;
+			}
     </style>
   </head>
   <body>
-    <div>
-      
+    <div id="canvas">
+			<p id="sunday"></p>
+      <img id="hakkyo" src="/tools/startnichiyoubi/img.png">
     </div>
-	  <div style="margin:2rem 20px">
+	  <div id="settings">
+			<input type="text" id="customtext" placeholder="xingqirikaishile!">
 			
 		</div>
     <script>
-      function start(sun,img1,img2){
+      function start(sun,img){
         document.getElementById("sunday").textContent=sun;
-        document.getElementById("start").src=img1;
-        document.getElementById("end").src=img2;
+        document.getElementById("hakkyo").src=img;
       }
-      var dataUri1,dataUri2;
-      document.getElementById("customimgblog1").addEventListener("change",function(){
+      var dataUri1;
+      document.getElementById("selected").addEventListener("change",function(){
 	      var fileList1=this.files;
       	var fileReader1=new FileReader();
         fileReader1.onload=function(){
 	        dataUri1=this.result;
       	}
       	fileReader1.readAsDataURL(fileList1[0]);
-      });
-      document.getElementById("customimgblog2").addEventListener("change",function(){
-      	var fileList2=this.files;
-	      var fileReader2=new FileReader();
-        fileReader2.onload=function(){
-	        dataUri2=this.result;
-      	}
-      	fileReader2.readAsDataURL(fileList2[0]);
       });
     </script>
   </body>
