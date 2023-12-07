@@ -59,6 +59,14 @@ body{
   }
 }
 
+#main a{
+  color:#1fffad;
+}
+
+#main a:visited{
+  color:#96ffd9
+}
+
 #main * {
   font-family: sans-serif;
 }
