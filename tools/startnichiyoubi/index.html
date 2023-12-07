@@ -17,6 +17,7 @@
     <div>
       
     </div>
+	  <div></div>
     <script>
       function start(sun,img1,img2){
         document.getElementById("sunday").textContent=sun;
@@ -25,20 +26,20 @@
       }
       var dataUri1,dataUri2;
       document.getElementById("customimgblog1").addEventListener("change",function(){
-	var fileList1=this.files;
-	var fileReader1=new FileReader();
+	      var fileList1=this.files;
+      	var fileReader1=new FileReader();
         fileReader1.onload=function(){
-	  dataUri1=this.result;
-  	}
-	fileReader1.readAsDataURL(fileList1[0]);
+	        dataUri1=this.result;
+      	}
+      	fileReader1.readAsDataURL(fileList1[0]);
       });
       document.getElementById("customimgblog2").addEventListener("change",function(){
-	var fileList2=this.files;
-	var fileReader2=new FileReader();
+      	var fileList2=this.files;
+	      var fileReader2=new FileReader();
         fileReader2.onload=function(){
-	  dataUri2=this.result;
-	}
-	fileReader2.readAsDataURL(fileList2[0]);
+	        dataUri2=this.result;
+      	}
+      	fileReader2.readAsDataURL(fileList2[0]);
       });
     </script>
   </body>
