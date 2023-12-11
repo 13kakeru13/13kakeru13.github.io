@@ -15,3 +15,9 @@ function otherLanguage(otherlang){
    sidebarelement=sidebarelement+"<a href='"+otherlang+".html'>"+otherlang+"</a><br>";
   document.getElementById("sblanguages").innerHTML=sidebarelement;
 }
+
+/*omakase*/
+var articles=["口感很筋道"];
+function randompage(){
+  location.href="https://13kakeru13.github.io/chimopedia/a/"+
+}
